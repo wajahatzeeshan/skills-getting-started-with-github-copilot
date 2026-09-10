@@ -68,7 +68,7 @@ jobs:
             fi
 
             echo "Waiting for CodeQL... (Attempt $((ATTEMPT+1))/$MAX_ATTEMPTS)"
-            sleep 5
+            sleep 7
             ATTEMPT=$((ATTEMPT+1))
           done
 
