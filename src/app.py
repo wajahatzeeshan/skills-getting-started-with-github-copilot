@@ -31,13 +31,13 @@ activities = {
         "description": "Learn programming fundamentals and build software projects",
         "schedule": "Tuesdays and Thursdays, 3:30 PM - 4:30 PM",
         "max_participants": 20,
-        "participants": []
+        "participants": ["michael@merington.edu"]
     },
     "Gym Class": {
         "description": "Physical education and sports activities",
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
-        "participants": []
+        "participants": ["daniel@merington.edu"]
     },
     "Soccer Team": {
         "description": "Practice teamwork and compete in soccer matches",
