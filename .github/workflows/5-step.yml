@@ -57,7 +57,7 @@ jobs:
       - name: Wait for CodeQL analysis
         run: |
           SHA="${{ github.event.pull_request.head.sha || github.sha }}"
-          MAX_ATTEMPTS=10
+          MAX_ATTEMPTS=12
           ATTEMPT=0
 
           while [ "$ATTEMPT" -lt "$MAX_ATTEMPTS" ]; do
@@ -75,7 +75,7 @@ jobs:
             fi
 
             echo "Waiting for CodeQL... (Attempt $((ATTEMPT+1))/$MAX_ATTEMPTS)"
-            sleep 7
+            sleep 9
             ATTEMPT=$((ATTEMPT+1))
           done
 
