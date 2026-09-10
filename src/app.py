@@ -31,13 +31,13 @@ activities = {
         "description": "Learn programming fundamentals and build software projects",
         "schedule": "Tuesdays and Thursdays, 3:30 PM - 4:30 PM",
         "max_participants": 20,
-        "participants": ["michael@merington.edu"]
+        "participants": []
     },
     "Gym Class": {
         "description": "Physical education and sports activities",
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
-        "participants": ["daniel@merington.edu"]
+        "participants": []
     },
     "Soccer Team": {
         "description": "Practice teamwork and compete in soccer matches",
@@ -73,7 +73,7 @@ activities = {
         "description": "Conduct experiments and explore scientific concepts",
         "schedule": "Fridays, 2:00 PM - 3:30 PM",
         "max_participants": 12,
-        "participants": []
+        "participants": ["abc@gmail.com"]
     }
 }
 
@@ -109,6 +109,10 @@ def signup_for_activity(activity_name: str, email: str):
     # Validate activity exists
     if activity_name not in activities:
         raise HTTPException(status_code=404, detail="Activity not found")
+
+    # Validate email domain
+    if not email.lower().endswith("@merington.edu"):
+        raise HTTPException(status_code=400, detail="Email must be from the @merington.edu domain")
 
     # Get the specific activity
     activity = activities[activity_name]

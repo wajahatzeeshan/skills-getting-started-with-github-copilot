@@ -25,3 +25,10 @@ def test_unregister_participant_requires_valid_activity_and_email():
     response = client.delete("/activities/Programming Class/unregister?email=missing@merington.edu")
     assert response.status_code == 400
     assert response.json()["detail"] == "Student not found in this activity"
+
+
+def test_signup_rejects_non_merington_email_domain():
+    response = client.post("/activities/Chess Club/signup?email=student@gmail.com")
+
+    assert response.status_code == 400
+    assert response.json()["detail"] == "Email must be from the @merington.edu domain"
